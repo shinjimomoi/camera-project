@@ -1,0 +1,25 @@
+<h1>Cameras Home</h1>
+<div>
+  <% if user_signed_in? %>
+    <%# <div id="react-container" data-data="<%= { message: @message, user: current_user}.to_json %>"></div> %>
+    <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+    <%= link_to 'My Cameras', cameras_path, method: :get %>
+
+  <% else %>
+    <h4> You're not signed in </h4>
+    <a href="#signin"><%= link_to 'Sign in', new_user_session_path %></a>
+    <a href="#signin"><%= link_to 'Sign up', new_user_registration_path %></a>
+  <% end %>
+    <table>
+  <% @cameras.each do |camera| %>
+    <tr>
+      <td><%= camera.model %></td>
+      <td><%= camera.year %></td>
+      <td><%= camera.condition %></td>
+      <td><%= camera.price %></td>
+      <td><%= link_to "View", camera %></td>
+    </tr>
+  <% end %>
+  </table>
+
+</div>

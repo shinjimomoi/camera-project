@@ -1,0 +1,28 @@
+<h4>My Cameras</h4>
+
+<% if user_signed_in? %>
+  <table>
+    <thead>
+      <tr>
+        <th>Model</th>
+        <th>Year</th>
+        <th>Condition</th>
+        <th>Price</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @my_cameras.each do |camera| %>
+        <tr>
+          <td><%= camera.model %></td>
+          <td><%= camera.year %></td>
+          <td><%= camera.condition %></td>
+          <td><%= camera.price %></td>
+          <td><%= link_to "View", camera %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+<%= link_to "Add Camera", new_camera_path %>
+<%= link_to "All Cameras", root_path %>

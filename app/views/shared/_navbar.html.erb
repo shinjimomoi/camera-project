@@ -1,0 +1,13 @@
+<nav>
+  <ul>
+    <li><a href="#home"><%= link_to 'Home', root_path %></a></li>
+    <li><a href="#mycameras"><%= link_to 'My Cameras', cameras_path %></a></li>
+    <% if user_signed_in? %>
+      <li>Welcome, <%= current_user.name %></li>
+      <li><a href="#signout"><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+    <% else %>
+      <li><a href="#signin"><%= link_to 'Sign in', new_user_session_path %></a></li>
+      <li><a href="#signup"><%= link_to 'Sign up', new_user_registration_path %></a></li>
+    <% end %>
+  </ul>
+</nav>

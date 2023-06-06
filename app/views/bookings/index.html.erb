@@ -1,0 +1,26 @@
+<h1>Bookings</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Camera</th>
+      <th>Renter</th>
+      <th>Owner</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @bookings.each do |booking| %>
+      <tr>
+        <td><%= booking.start_date %></td>
+        <td><%= booking.end_date %></td>
+        <td><%= booking.camera.model %></td>
+        <td><%= booking.camera.user.name %></td>
+        <td><%= booking.user.name %></td>
+        <td><%= link_to "View", booking %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "Find Cameras", root_path %>
