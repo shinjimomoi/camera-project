@@ -1,0 +1,22 @@
+nav {
+	display: flex;
+  background-color: rgb(49, 50, 52);
+	justify-content: end;
+	ul {
+		display: flex;
+    margin-right: 24px;
+		:not(:last-child) {
+			margin-right: 8px;
+		}
+		li {
+      list-style: none;
+      color: #fff;
+      a {
+        text-decoration: none;
+        &:visited {
+          color: inherit;
+        }
+      }
+		}
+	}
+}
