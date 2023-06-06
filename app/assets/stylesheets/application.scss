@@ -14,6 +14,18 @@
  *= require_self
  */
 
- h1 {
-  color: blue;
- }
+nav {
+	display: flex;
+	justify-content: end;
+	ul {
+		display: flex;
+		:not(:last-child) {
+			margin-right: 8px;
+		}
+		li {
+			text-decoration: none;
+			list-style: none;
+			color: red;
+		}
+	}
+}
