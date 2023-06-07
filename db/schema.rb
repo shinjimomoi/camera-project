@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_30_151011) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_07_145934) do
   create_table "bookings", force: :cascade do |t|
     t.integer "user_id"
     t.integer "camera_id"
@@ -31,6 +31,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_30_151011) do
     t.integer "price"
     t.string "condition"
     t.integer "user_id", null: false
+    t.string "photo"
     t.index ["user_id"], name: "index_cameras_on_user_id"
   end
 
