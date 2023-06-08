@@ -1,5 +1,9 @@
 <div class="card">
-  <img src="img" alt="camera">
+  <% if camera.photo.attached? %>
+    <% camera.photo.each do |photo| %>
+      <%= image_tag photo if photo %>
+    <% end %>
+  <% end %>
   <div class="info">
     <h4><%= camera.model %></h4>
     <p><%= camera.year %></p>

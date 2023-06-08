@@ -23,7 +23,6 @@ class CamerasController < ApplicationController
 
     # POST /cameras
     def create
-
       @camera = current_user.cameras.build(camera_params)
       @camera.photo.attach(params[:camera][:photo])
       if @camera.save
