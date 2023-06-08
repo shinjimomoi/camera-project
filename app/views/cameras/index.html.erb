@@ -19,6 +19,14 @@
           <td><%= camera.condition %></td>
           <td><%= camera.price %></td>
           <td><%= link_to "View", camera %></td>
+          <td>
+            <% if camera.photo.attached? %>
+              <% camera.photo.each do |photo| %>
+                <%= image_tag photo if photo %>
+              <% end %>
+            <% end %>
+          </td>
+
         </tr>
       <% end %>
     </tbody>
