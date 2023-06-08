@@ -236,6 +236,7 @@ PLATFORMS
   x86_64-darwin-21
 
 DEPENDENCIES
+  activestorage
   bootsnap
   capybara
   debug

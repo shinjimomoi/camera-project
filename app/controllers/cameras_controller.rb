@@ -25,6 +25,7 @@ class CamerasController < ApplicationController
     def create
 
       @camera = current_user.cameras.build(camera_params)
+      @camera.photo.attach(params[:camera][:photo])
       if @camera.save
         puts "coming here"
         redirect_to @camera, notice: 'Camera was successfully created.'
@@ -59,6 +60,6 @@ class CamerasController < ApplicationController
     private
 
     def camera_params
-      params.require(:camera).permit(:brand, :model, :year, :price, :condition, :user_id)
+      params.require(:camera).permit(:brand, :model, :year, :price, :condition, :user_id, :photo)
     end
   end

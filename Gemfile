@@ -33,6 +33,7 @@ gem "timeliness"
 
 gem "sass-rails", "~> 6.0"
 
+gem 'activestorage'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
