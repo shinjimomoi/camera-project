@@ -1,6 +1,6 @@
 <h1>Camera Details</h1>
 
-<%= render 'shared/card', camera: @camera  %>
+<%= render partial: 'shared/card', locals: { camera: @camera, card_style: 'show-card' } %>
 <% if user_signed_in? && @camera.user == current_user %>
   <p><%= link_to 'Edit', edit_camera_path(@camera) %></p>
   <%= form_with(model: @camera, method: :delete, url: camera_path(@camera)) do |form| %>

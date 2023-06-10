@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card <%= card_style %>">
   <% if camera.photo.attached? %>
     <% camera.photo.each do |photo| %>
       <%= image_tag photo if photo %>

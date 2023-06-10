@@ -3,7 +3,7 @@
   <div class="camera-list">
 		<% @cameras.each do |camera| %>
 			<%= link_to camera_path(camera), class: "card-link" do %>
-				<%= render 'shared/card', camera: camera  %>
+        <%= render 'shared/card', camera: camera, card_style: 'home-card' %>
 			<% end %>
 		<% end %>
   </div >
