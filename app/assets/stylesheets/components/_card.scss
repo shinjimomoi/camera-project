@@ -13,12 +13,14 @@
   &.index-card {
   }
   &.show-card {
+    max-width: 240px;
   }
   img {
     object-fit: contain;
     padding: 16px;
     width: 200px;
     height: auto;
+    margin: auto;
   }
 	.info {
 		p {
