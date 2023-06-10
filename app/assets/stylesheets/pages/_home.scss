@@ -1,7 +1,10 @@
 .camera-list {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: start;
+	justify-content: space-between;
+  :not(:last-child) {
+    margin-right: 8px;
+  }
 
 	.card-link {
     display: inline-block;

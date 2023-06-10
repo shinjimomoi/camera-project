@@ -9,18 +9,15 @@
   width: auto;
   height: 400px;
   &.home-card {
-    background-color: blue;
   }
   &.index-card {
-    background-color: red;
   }
   &.show-card {
-    background-color: yellow;
   }
   img {
     object-fit: contain;
     padding: 16px;
-    width: 240px;
+    width: 200px;
     height: auto;
   }
 	.info {
