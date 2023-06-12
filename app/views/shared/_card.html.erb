@@ -10,9 +10,8 @@
     <% end %>
   <% end %>
   <div class="info-container">
-    <h4>Model: <%= camera.model %></h4>
-    <p>Year: <%= camera.year %></p>
-    <p>Condition: <%= camera.condition %></p>
-    <p>Price: <%= camera.price %></p>
+    <h4 class="model"><%= camera.model %></h4>
+    <p class="year"><%= camera.year %> • <%= camera.condition %></p>
+    <p class="price">$<%= camera.price %> <span>day</span> </p>
   </div>
 </div>

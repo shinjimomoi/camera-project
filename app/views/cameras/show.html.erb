@@ -7,6 +7,17 @@
     <%= form.submit 'Delete' %>
   <% end %>
 <% end %>
+<% if @bookings.present? %>
+  <ul>
+    <% @bookings.each do |booking| %>
+      <li>
+        Booked from <%= booking.start_date %> to <%= booking.end_date %> by <%= booking.user.name %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No bookings found.</p>
+<% end %>
 <% if user_signed_in? && @camera.user != current_user %>
   <%= link_to "Book this camera", new_booking_path(camera_id: @camera.id), class: "btn btn-primary" %>
 <% end %>

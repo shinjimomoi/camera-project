@@ -1,8 +1,11 @@
 nav {
 	display: flex;
-  background-color: rgb(49, 50, 52);
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 4px rgba($color: #000000, $alpha: 0.1);
 	justify-content: end;
+  padding: 16px 0;
 	ul {
+    margin: 0;
 		display: flex;
     margin-right: 24px;
 		:not(:last-child) {
@@ -10,7 +13,8 @@ nav {
 		}
 		li {
       list-style: none;
-      color: #fff;
+      color: #111;
+
       a {
         text-decoration: none;
         &:visited {
