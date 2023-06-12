@@ -1,10 +1,12 @@
 <div class="card <%= card_style %>">
   <% if camera.photo.attached? %>
     <% camera.photo.each do |photo| %>
-      <%= image_tag photo if photo %>
+      <div class="img-container">
+        <%= image_tag photo if photo %>
+      </div>
     <% end %>
   <% end %>
-  <div class="info">
+  <div class="info-container">
     <h4>Model: <%= camera.model %></h4>
     <p>Year: <%= camera.year %></p>
     <p>Condition: <%= camera.condition %></p>

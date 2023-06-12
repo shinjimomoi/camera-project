@@ -1,13 +1,32 @@
+.camera-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+  margin-right: auto;
+  // :not(:last-child) {
+  //   margin-right: 16px;
+  // }
+
+	.card-link {
+    display: inline-block;
+		text-decoration: none;
+    flex: 0 1 calc(25% - 16px);
+		&:visited {
+			color: black;
+		}
+
+  }
+}
+
+
 .card {
-	box-shadow: 0 0 8px rgba($color: #000000, $alpha: .1);
-	border-radius: 16px;
+  vertical-align: top;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-	padding: 16px;
-	min-width: 12vw;
-  width: auto;
-  height: 400px;
+
+  justify-content: start;
+  margin-bottom: 16px;
+  min-width: 12vw;
   &.home-card {
   }
   &.index-card {
@@ -15,16 +34,20 @@
   &.show-card {
     max-width: 240px;
   }
-  img {
+  .img-container {
+    box-shadow: 0 0 16px rgba($color: #000000, $alpha: .08);
+    border-radius: 16px;
     object-fit: contain;
-    padding: 16px;
-    width: 200px;
-    height: auto;
-    margin: auto;
+    padding: 24px;
+    img {
+      width: 200px;
+      height: auto;
+      margin: auto;
+    }
   }
-	.info {
-		p {
-			// display: inline-block;
-		}
-	}
+  .info-container {
+    p {
+      // display: inline-block;
+    }
+  }
 }
