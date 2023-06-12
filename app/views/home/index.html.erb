@@ -1,6 +1,5 @@
 <div>
   <div class="camera-list">
-
 		<% @cameras.each do |camera| %>
       <% unless user_signed_in? && camera.user == current_user %>
         <%= link_to camera_path(camera), class: "card-link" do %>
