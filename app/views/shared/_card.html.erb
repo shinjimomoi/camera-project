@@ -2,6 +2,9 @@
   <% if camera.photo.attached? %>
     <% camera.photo.each do |photo| %>
       <div class="img-container">
+        <% if camera.bookings.present? %>
+          <span class="badge badge-warning">Already Booked</span>
+        <% end %>
         <%= image_tag photo if photo %>
       </div>
     <% end %>

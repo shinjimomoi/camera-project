@@ -23,7 +23,6 @@
   vertical-align: top;
   display: flex;
   flex-direction: column;
-
   justify-content: start;
   margin-bottom: 16px;
   min-width: 12vw;
@@ -35,11 +34,22 @@
     max-width: 240px;
   }
   .img-container {
+    position: relative;
+    .badge {
+      position: absolute;
+      border-radius: 4px;
+      right: 8px;
+      bottom: 8px;
+      padding: 4px 8px;
+      background-color: rgb(220, 31, 85);
+      color: #fff;
+    }
     box-shadow: 0 0 16px rgba($color: #000000, $alpha: .08);
     border-radius: 16px;
     object-fit: contain;
     padding: 24px;
     img {
+      display: block;
       width: 200px;
       height: auto;
       margin: auto;
