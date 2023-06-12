@@ -1,9 +1,12 @@
 <div>
   <div class="camera-list">
+
 		<% @cameras.each do |camera| %>
-			<%= link_to camera_path(camera), class: "card-link" do %>
-        <%= render 'shared/card', camera: camera, card_style: 'home-card' %>
-			<% end %>
+      <% unless user_signed_in? && camera.user == current_user %>
+        <%= link_to camera_path(camera), class: "card-link" do %>
+          <%= render 'shared/card', camera: camera, card_style: 'home-card' %>
+        <% end %>
+      <% end %>
 		<% end %>
   </div >
 </div>
