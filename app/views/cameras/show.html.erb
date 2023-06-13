@@ -1,27 +1,31 @@
 <h1>Camera Details</h1>
-
-<%= render partial: 'shared/card', locals: { camera: @camera, card_style: 'show-card' } %>
-<% if user_signed_in? && @camera.user == current_user %>
-  <p><%= link_to 'Edit', edit_camera_path(@camera) %></p>
-  <%= form_with(model: @camera, method: :delete, url: camera_path(@camera)) do |form| %>
-    <%= form.submit 'Delete' %>
+<div class="card">
+  <%= render partial: 'shared/card', locals: { camera: @camera, card_style: 'show-card' } %>
+</div>
+<div class="bookings">
+  <% if @bookings.present? && @camera.user == current_user%>
+    <ul>
+      <% @bookings.order(start_date: :asc).each do |booking| %>
+        <li>
+          Booked from <%= booking.start_date %> to <%= booking.end_date %> by <%= booking.user.name %>
+        </li>
+      <% end %>
+    </ul>
+</div>
   <% end %>
-<% end %>
-<% if @bookings.present? && @camera.user == current_user%>
-  <ul>
-    <% @bookings.order(start_date: :asc).each do |booking| %>
-      <li>
-        Booked from <%= booking.start_date %> to <%= booking.end_date %> by <%= booking.user.name %>
-      </li>
+<div class="controls">
+  <% if user_signed_in? && @camera.user == current_user %>
+    <p><%= link_to 'Edit', edit_camera_path(@camera) %></p>
+    <%= form_with(model: @camera, method: :delete, url: camera_path(@camera)) do |form| %>
+      <%= form.submit 'Delete' %>
     <% end %>
-  </ul>
+  <% end %>
+  <% if user_signed_in? && @camera.user != current_user %>
+    <%= link_to "Book this camera", new_booking_path(camera_id: @camera.id), class: "btn btn-primary" %>
+  <% end %>
+  <% if user_signed_in? %>
+    <p><%= link_to 'My Cameras', cameras_path %></p>
+  <% else %>
+    <p><%= link_to 'Back', root_path %></p>
 <% end %>
-
-<% if user_signed_in? && @camera.user != current_user %>
-  <%= link_to "Book this camera", new_booking_path(camera_id: @camera.id), class: "btn btn-primary" %>
-<% end %>
-<% if user_signed_in? %>
-  <p><%= link_to 'My Cameras', cameras_path %></p>
-<% else %>
-  <p><%= link_to 'Back', root_path %></p>
-<% end %>
+</div>
