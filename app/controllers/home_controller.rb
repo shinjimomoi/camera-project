@@ -1,10 +1,13 @@
 class HomeController < ApplicationController
   def index
     @message = "Welcome to my Camera"
-    @cameras = Camera.all
-      if user_signed_in?
-        @my_cameras = current_user.cameras
-      end
+    if params[:search]
+      @cameras = Camera.where("model LIKE ?", "%#{params[:search]}%")
+    elsif user_signed_in?
+      @cameras = Camera.where.not(user: current_user)
+    else
+      @cameras = Camera.all
+    end
   end
 
   private

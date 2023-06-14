@@ -2,9 +2,13 @@ class CamerasController < ApplicationController
     before_action :authenticate_user!, except: [:index, :show]
     # GET /cameras
     def index
-      @cameras = Camera.all
-      if user_signed_in?
+      @cameras = if params[:search]
+        Camera.where("name LIKE ?", "%#{params[:search]}%")
+      elsif
+        user_signed_in?
         @my_cameras = current_user.cameras
+      else
+        Camera.all
       end
     end
 

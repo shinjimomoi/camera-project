@@ -1,4 +1,10 @@
 <div>
+  <div class="search-form">
+    <%= form_tag(root_path, method: :get, class: "search-form") do %>
+      <%= text_field_tag(:search, params[:search], placeholder: "Search cameras") %>
+      <%= submit_tag("Search", class: "btn btn-primary") %>
+    <% end %>
+  </div>
   <div class="camera-list">
 		<% @cameras.each do |camera| %>
       <% unless user_signed_in? && camera.user == current_user %>
