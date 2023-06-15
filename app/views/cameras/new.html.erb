@@ -1,6 +1,10 @@
 <h1>New Camera</h1>
 <%= form_with(model: @camera, url: cameras_path, local: true) do |form| %>
   <div>
+    <%= form.label :brand %>
+    <%= form.text_field :brand %>
+  </div>
+  <div>
     <%= form.label :model %>
     <%= form.text_field :model %>
   </div>

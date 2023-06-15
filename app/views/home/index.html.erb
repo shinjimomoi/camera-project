@@ -4,6 +4,7 @@
       <%= text_field_tag(:search, params[:search], placeholder: "Search cameras") %>
       <%= submit_tag("Search", class: "btn btn-primary") %>
     <% end %>
+    <%= link_to 'Order by Condition', root_path(order_by: 'condition') %>
   </div>
   <div class="camera-list">
 		<% @cameras.each do |camera| %>

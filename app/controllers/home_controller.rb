@@ -8,6 +8,19 @@ class HomeController < ApplicationController
     else
       @cameras = Camera.all
     end
+
+    if params[:order_by] == 'condition'
+      @cameras = @cameras.order(Arel.sql(
+        "CASE
+          WHEN condition = 'New' THEN 0
+          WHEN condition = 'Excelent' THEN 1
+          WHEN condition = 'Good' THEN 2
+          WHEN condition = 'Used' THEN 3
+          ELSE 4
+        END")
+      )
+    end
+
   end
 
   private

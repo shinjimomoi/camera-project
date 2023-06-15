@@ -72,7 +72,14 @@
     }
   }
   .info-container {
-    .model, .year {
+    h4.brand {
+      color: #b8b8b8;
+      // font-weight: 400;
+    }
+    h4 {
+      margin-bottom: 0.4rem;
+    }
+    p {
       margin-bottom: 0.2rem;
     }
     .year {
