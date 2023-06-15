@@ -31,7 +31,6 @@ class CamerasController < ApplicationController
       @camera = current_user.cameras.build(camera_params)
       @camera.photo.attach(params[:camera][:photo])
       if @camera.save
-        puts "coming here"
         redirect_to @camera, notice: 'Camera was successfully created.'
       else
         flash.now[:alert] = 'There was an error creating the camera.'

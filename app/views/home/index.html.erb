@@ -4,7 +4,11 @@
       <%= text_field_tag(:search, params[:search], placeholder: "Search cameras") %>
       <%= submit_tag("Search", class: "btn btn-primary") %>
     <% end %>
-    <%= link_to 'Order by Condition', root_path(order_by: 'condition') %>
+    <h4>Filter by:</h4>
+    <%= link_to "Condition: New to used", { order_by: 'condition', sort_direction: 'asc' } %>
+    <%= link_to "Condition: Used to new", { order_by: 'condition', sort_direction: 'desc' } %>
+    <%= link_to 'Price: Lower to higher', root_path(order_by: 'price', sort_direction: 'asc') %>
+    <%= link_to 'Price: Higher to low', root_path(order_by: 'price', sort_direction: 'desc') %>
   </div>
   <div class="camera-list">
 		<% @cameras.each do |camera| %>

@@ -10,17 +10,35 @@ class HomeController < ApplicationController
     end
 
     if params[:order_by] == 'condition'
-      @cameras = @cameras.order(Arel.sql(
-        "CASE
-          WHEN condition = 'New' THEN 0
-          WHEN condition = 'Excelent' THEN 1
-          WHEN condition = 'Good' THEN 2
-          WHEN condition = 'Used' THEN 3
-          ELSE 4
-        END")
-      )
+      if params[:sort_direction] == 'asc'
+        @cameras = @cameras.order(Arel.sql(
+          "CASE
+            WHEN condition = 'New' THEN 0
+            WHEN condition = 'Excelent' THEN 1
+            WHEN condition = 'Good' THEN 2
+            WHEN condition = 'Used' THEN 3
+            ELSE 4
+          END ASC")
+        )
+      else
+        @cameras = @cameras.order(Arel.sql(
+          "CASE
+            WHEN condition = 'New' THEN 0
+            WHEN condition = 'Excelent' THEN 1
+            WHEN condition = 'Good' THEN 2
+            WHEN condition = 'Used' THEN 3
+            ELSE 4
+          END DESC")
+        )
+      end
     end
 
+    if params[:order_by] == 'price'
+      sort_direction = params[:sort_direction] == 'asc' ? 'ASC' : 'DESC'
+      @cameras = @cameras.order(price: sort_direction)
+    else
+      @cameras = @cameras.order(id: :desc) # Default order if no sorting parameters are provided
+    end
   end
 
   private
