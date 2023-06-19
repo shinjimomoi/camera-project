@@ -8,13 +8,19 @@
     <div class="filters">
       <p data-filter="condition">Condition:</p>
       <div class="filter condition hidden">
-        <%= link_to "New to used", { order_by: 'condition', sort_direction: 'asc' } %>
-        <%= link_to "Used to new", { order_by: 'condition', sort_direction: 'desc' } %>
+        <p>
+          <%= link_to "New to used", { order_by: 'condition', sort_direction: 'asc' } %>
+          or
+          <%= link_to "Used to new", { order_by: 'condition', sort_direction: 'desc' } %>
+        </p>
       </div>
       <p data-filter="price">Price:</p>
       <div class="filter price hidden">
-        <%= link_to 'Lower to higher', root_path(order_by: 'price', sort_direction: 'asc') %>
-        <%= link_to 'Higher to low', root_path(order_by: 'price', sort_direction: 'desc') %>
+        <p>
+          <%= link_to 'Lower to higher', root_path(order_by: 'price', sort_direction: 'asc') %>
+          or
+          <%= link_to 'Higher to low', root_path(order_by: 'price', sort_direction: 'desc') %>
+        </p>
       </div>
     </div>
   </div>

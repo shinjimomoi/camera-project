@@ -7,8 +7,15 @@ a {
 }
 .filters {
   position: relative;
-  p:not(:last-of-type){
-    margin-right: 16px;
+  p {
+    cursor: pointer;
+    border: solid 1px var(--gr);
+    border-radius: var(--br2);
+    background-color: var(--w);
+    padding: 8px 12px;
+    &:not(:last-of-type){
+      margin-right: 16px;
+    }
   }
   display: flex;
   .hidden {
@@ -16,13 +23,12 @@ a {
   }
   .condition, .price {
     position: absolute;
-    background-color: var(--gr);
-    padding: 8px 12px;
     top: 16px;
     left: 0;
     z-index: 10;
     a {
-      color: var(--w);
+      color: var(--gr);
+      font-weight: bold;
     }
   }
 }
