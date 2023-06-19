@@ -5,10 +5,18 @@
       <%= submit_tag("Search", class: "btn btn-primary") %>
     <% end %>
     <h4>Filter by:</h4>
-    <%= link_to "Condition: New to used", { order_by: 'condition', sort_direction: 'asc' } %>
-    <%= link_to "Condition: Used to new", { order_by: 'condition', sort_direction: 'desc' } %>
-    <%= link_to 'Price: Lower to higher', root_path(order_by: 'price', sort_direction: 'asc') %>
-    <%= link_to 'Price: Higher to low', root_path(order_by: 'price', sort_direction: 'desc') %>
+    <div class="filters">
+      <p data-filter="condition">Condition:</p>
+      <div class="filter condition hidden">
+        <%= link_to "New to used", { order_by: 'condition', sort_direction: 'asc' } %>
+        <%= link_to "Used to new", { order_by: 'condition', sort_direction: 'desc' } %>
+      </div>
+      <p data-filter="price">Price:</p>
+      <div class="filter price hidden">
+        <%= link_to 'Lower to higher', root_path(order_by: 'price', sort_direction: 'asc') %>
+        <%= link_to 'Higher to low', root_path(order_by: 'price', sort_direction: 'desc') %>
+      </div>
+    </div>
   </div>
   <div class="camera-list">
 		<% @cameras.each do |camera| %>

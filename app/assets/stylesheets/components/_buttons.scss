@@ -1,15 +1,19 @@
 .btn {
+  font-size: 14px;
   &:not(:last-of-type) {
     margin-right: 8px;
   }
   &.btn-primary {
-    font-size: 14px;
     background-color: var(--gr);
     border-radius: var(--br2);
-    color: var(--lg);
-    border: solid 1px var(--gr);
+    color: var(--w);
     padding: 8px 12px;
     cursor: pointer;
+  }
+  &.btn-delete {
+    background-color: var(--a2);
+    border: none;
+    color: var(--w);
   }
 }
 .bookings {

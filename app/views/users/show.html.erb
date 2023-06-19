@@ -7,6 +7,6 @@
 <p><strong>Email:</strong> <%= @user.email %></p>
 
 <p><%= link_to 'Edit', edit_user_path(@user) %></p>
-<%= link_to 'Delete', users_path, method: :delete %>
+<%= link_to 'Delete', users_path, method: :delete, class:"btn btn-delete" %>
 
 <p><%= link_to 'Back', users_path %></p>

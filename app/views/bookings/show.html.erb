@@ -4,7 +4,9 @@
 <p><strong>From:</strong> <%= @booking.end_date %></p>
 <p><strong>Owner:</strong> <%= @booking.camera.user.name %></p>
 <p><strong>Renter:</strong> <%= @booking.user.name %></p>
-<%= form_with(model: @booking, method: :delete, url: booking_path(@booking)) do |form| %>
-    <%= form.submit 'Delete' %>
-<% end %>
-<%= link_to "More Cameras", root_path %>
+<div class="controls">
+  <%= form_with(model: @booking, method: :delete, url: booking_path(@booking)) do |form| %>
+      <%= form.submit 'Delete', class:"btn btn-delete" %>
+  <% end %>
+  <%= link_to "More Cameras", root_path, class:"btn btn-primary" %>
+</div>
