@@ -1,0 +1,13 @@
+.btn {
+  &:not(:last-of-type) {
+    margin-right: 8px;
+  }
+  &.btn-primary {
+    background-color: var(--gr);
+    border-radius: var(--br2);
+    color: var(--lg);
+    border: solid 1px var(--gr);
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+}

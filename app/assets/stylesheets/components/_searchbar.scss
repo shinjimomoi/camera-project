@@ -1,0 +1,38 @@
+.search-form, form {
+  :not(:last-child) {
+    margin-bottom: 8px;
+  }
+  input {
+    &[type=text], &[type=number] {
+      border-radius: var(--br2);
+      border: solid 1px var(--lg);
+      padding: 8px 12px;
+      &:focus {
+        outline: solid 1px rgb(20, 184, 184);
+      }
+    }
+    &[type=submit] {
+      background-color: var(--gr);
+      border-radius: var(--br2);
+      color: var(--lg);
+      border: solid 1px var(--gr);
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+    &::placeholder {
+      color: var(--lg);
+    }
+  }
+  .photofield {
+    input {
+      display: none;
+    }
+    label {
+      background-color: var(--lg);
+      border-radius: var(--br2);
+      color: var(--gr);
+      cursor: pointer;
+      padding: 8px 12px;
+    }
+  }
+}

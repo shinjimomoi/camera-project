@@ -13,6 +13,11 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :brand %>
+    <%= form.text_field :brand %>
+  </div>
+
+  <div class="field">
     <%= form.label :model %>
     <%= form.text_field :model %>
   </div>
@@ -32,8 +37,8 @@
     <%= form.text_field :condition %>
   </div>
 
-  <div class="field">
-    <%= form.label :photo %>
+  <div class="photofield">
+    <%= form.label :photo, "Upload a photo" %>
     <%= form.file_field :photo %>
   </div>
 

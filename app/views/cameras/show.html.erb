@@ -24,8 +24,8 @@
     <%= link_to "Book this camera", new_booking_path(camera_id: @camera.id), class: "btn btn-primary" %>
   <% end %>
   <% if user_signed_in? %>
-    <p><%= link_to 'My Cameras', cameras_path %></p>
+    <%= link_to 'My Cameras', cameras_path, class: "btn btn-primary" %>
   <% else %>
-    <p><%= link_to 'Back', root_path %></p>
+    <%= link_to 'Back', root_path, class: "btn btn-primary" %>
 <% end %>
 </div>
