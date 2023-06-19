@@ -8,7 +8,7 @@
       border: solid 1px var(--lg);
       padding: 8px 12px;
       &:focus {
-        outline: solid 1px rgb(20, 184, 184);
+        outline: solid 1px var(--a1);
       }
     }
     &[type=submit] {
@@ -28,9 +28,10 @@
       display: none;
     }
     label {
-      background-color: var(--lg);
+      font-size: 14px;
+      background-color: var(--a1);
       border-radius: var(--br2);
-      color: var(--gr);
+      color: var(--w);
       cursor: pointer;
       padding: 8px 12px;
     }

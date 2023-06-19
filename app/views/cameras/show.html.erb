@@ -15,7 +15,7 @@
   <% end %>
 <div class="controls">
   <% if user_signed_in? && @camera.user == current_user %>
-    <p><%= link_to 'Edit', edit_camera_path(@camera) %></p>
+    <%= link_to 'Edit', edit_camera_path(@camera), class: "btn btn-primary" %>
     <%= form_with(model: @camera, method: :delete, url: camera_path(@camera)) do |form| %>
       <%= form.submit 'Delete' %>
     <% end %>
