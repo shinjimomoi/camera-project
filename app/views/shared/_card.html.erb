@@ -5,9 +5,16 @@
         <% if camera.bookings.present? && camera.user != current_user %>
           <span class="badge badge-warning">Already Booked</span>
         <% end %>
-        <%= image_tag photo if photo %>
+        <%= image_tag(photo) %>
       </div>
     <% end %>
+  <% else %>
+    <div class="img-container">
+      <% if camera.bookings.present? && camera.user != current_user %>
+        <span class="badge badge-warning">Already Booked</span>
+      <% end %>
+      <%= image_tag("no-photo.jpg") %>
+    </div>
   <% end %>
   <div class="info-container">
     <h4 class="brand"> <%= camera.brand %></h4>
