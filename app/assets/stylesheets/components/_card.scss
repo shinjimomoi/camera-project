@@ -4,20 +4,36 @@
   }
 }
 
+@mixin medium {
+  @media (max-width: 1182px) {
+    .card-link {
+      flex: 0 1 calc(33% - 8px) !important;
+    }
+  }
+}
+
+@mixin small {
+  @media (max-width: 908px) {
+    .card-link {
+      flex: 0 1 calc(50% - 8px) !important;
+    }
+  }
+}
+
 .camera-list {
+  @include medium;
+  @include small;
 	display: flex;
 	flex-wrap: wrap;
-	// justify-content: space-between;
+  justify-content: center;
+  flex-grow: 1;
   margin-right: auto;
   gap: 16px; // Add a 16px gap between the cards
-  // :not(:last-child) {
-  //   margin-right: 16px;
-  // }
 
 	.card-link {
     display: inline-block;
 		text-decoration: none;
-    flex: 0 1 calc(25% - 16px);
+    flex: 0 1 calc(25% - 12px);
     color: #111;
 		&:visited {
 			color: #111;
