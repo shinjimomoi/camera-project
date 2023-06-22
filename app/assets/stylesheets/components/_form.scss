@@ -1,46 +1,54 @@
+input {
+  &[type=text], &[type=number], &[type=email], &[type=password] {
+    border-radius: var(--br2);
+    border: solid 1px var(--lg);
+    padding: 8px 12px;
+    width: 20%;
+    &:focus {
+      outline: solid 1px var(--a1);
+    }
+  }
+}
 .login, .signup {
   width: 240px;
   margin: auto;
   padding: 32px;
   box-shadow: 0 0 4px rgba($color: #000000, $alpha: 0.2);
-}
-.search-form, form {
-  :not(:last-child) {
-    margin-bottom: 8px;
-  }
-  input {
-    &[type=text], &[type=number], &[type=email], &[type=password] {
-      border-radius: var(--br2);
-      border: solid 1px var(--lg);
-      width: 88%;
-      padding: 8px 12px;
-      &:focus {
-        outline: solid 1px var(--a1);
+  .search-form, form {
+    :not(:last-child) {
+      margin-bottom: 8px;
+    }
+    input {
+      &[type=text], &[type=number], &[type=email], &[type=password] {
+        width: 88%;
+        &:focus {
+          outline: solid 1px var(--a1);
+        }
+      }
+      &[type=submit] {
+        color: var(--w);
+        background-color: var(--gr);
+        border-radius: var(--br2);
+        border: solid 1px var(--gr);
+        padding: 8px 12px;
+        cursor: pointer;
+      }
+      &::placeholder {
+        color: var(--lg);
       }
     }
-    &[type=submit] {
-      color: var(--w);
-      background-color: var(--gr);
-      border-radius: var(--br2);
-      border: solid 1px var(--gr);
-      padding: 8px 12px;
-      cursor: pointer;
-    }
-    &::placeholder {
-      color: var(--lg);
-    }
-  }
-  .photofield {
-    input {
-      display: none;
-    }
-    label {
-      font-size: 14px;
-      background-color: var(--a1);
-      border-radius: var(--br2);
-      color: var(--w);
-      cursor: pointer;
-      padding: 8px 12px;
+    .photofield {
+      input {
+        display: none;
+      }
+      label {
+        font-size: 14px;
+        background-color: var(--a1);
+        border-radius: var(--br2);
+        color: var(--w);
+        cursor: pointer;
+        padding: 8px 12px;
+      }
     }
   }
 }

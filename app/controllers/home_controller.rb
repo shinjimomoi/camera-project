@@ -2,7 +2,7 @@ class HomeController < ApplicationController
   def index
     @message = "Welcome to my Camera"
     if params[:search]
-      @cameras = Camera.where("model LIKE ?", "%#{params[:search]}%")
+      @cameras = Camera.where("brand LIKE :search OR model LIKE :search", search: "%#{params[:search]}%")
     elsif user_signed_in?
       @cameras = Camera.where.not(user: current_user)
     else
