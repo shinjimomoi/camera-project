@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
       filter.classList.toggle('hidden');
     });
   });
-
   document.addEventListener('click', (event) => {
       const target = event.target;
       const isDropdown = target.closest('.filters');
