@@ -1,10 +1,12 @@
 <div>
-  <div class="search-form">
-    <%= form_tag(root_path, method: :get, class: "search-form") do %>
-      <%= text_field_tag(:search, params[:search], placeholder: "Search cameras") %>
-      <%= submit_tag("Search", class: "btn btn-primary") %>
-    <% end %>
-    <%# <h4>Filter by:</h4> %>
+  <div class="search">
+    <div class="search-form">
+      <%= form_tag(root_path, method: :get, class: "search-form") do %>
+        <%= text_field_tag(:search, params[:search], placeholder: "Search cameras") %>
+        <%= submit_tag("Search", class: "btn btn-primary") %>
+      <% end %>
+    </div>
+      <%# <h4>Filter by:</h4> %>
     <div class="filters">
       <a class="btn btn-secondary" data-filter="condition">Filter by:</a>
       <div class="filter filter-box condition hidden">

@@ -2,20 +2,19 @@ a.btn, input.btn {
   font-size: 14px;
   cursor: pointer;
   padding: 8px 12px;
+  border: none;
   border-radius: var(--br2);
   margin-right: 8px;
   &.btn-primary {
-    border: none;
     background-color: var(--gr);
     color: var(--w);
   }
   &.btn-secondary {
-    border: solid 1px var(--gr);
     color: var(--gr);
+    border: solid 1px var(--lg);
   }
   &.btn-delete {
     background-color: var(--a2);
-    border: none;
     color: var(--w);
   }
 }

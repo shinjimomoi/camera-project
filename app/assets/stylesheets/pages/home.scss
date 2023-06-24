@@ -5,17 +5,27 @@ a {
     color: rgb(80, 80, 80);
   }
 }
+.search {
+  display: flex;
+  justify-content: space-between;
+  .search-form {
+    input#search {
+      width: 240px;
+    }
+  }
+}
 .filters {
   position: relative;
   display: flex;
+  max-width: fit-content;
   .filter-box{
     cursor: pointer;
     border-radius: var(--br2);
     background-color: var(--w);
-
     position: absolute;
     display: flex;
     flex-direction: column;
+    align-items: center;
     top: 40px;
     left: 0;
     box-shadow: 0 0 16px rgba(0, 0, 0, 0.08);
@@ -25,6 +35,7 @@ a {
       font-weight: bold;
       display: inline-block;
       padding: 16px;
+      width: 180px;
       font-size: 14px;
       transition: .2s ease-in-out;
       &:first-child {
@@ -44,7 +55,6 @@ a {
     &.hidden {
       display: none;
     }
-
   }
 
 
