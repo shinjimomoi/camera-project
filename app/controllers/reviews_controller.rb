@@ -3,14 +3,7 @@ class ReviewsController < ApplicationController
   @camera = Camera.find(params[:camera_id])
   @review = @camera.reviews.build(review_params)
   @review.user = current_user # Associate the user with the review
-
-  if @review.save
-    # Review saved successfully
-    redirect_to @camera, notice: 'Review created successfully.'
-  else
-    # Handle validation errors or any other scenario where the review couldn't be saved
-    # Redirect or render as per your application's requirements
-  end
+  redirect_to @camera, notice: 'Review created successfully.' if @review.save
 end
 
   private
