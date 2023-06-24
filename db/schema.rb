@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_08_144756) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_24_063150) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -62,6 +62,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_08_144756) do
     t.index ["user_id"], name: "index_cameras_on_user_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.integer "rating"
+    t.text "comment"
+    t.integer "camera_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["camera_id"], name: "index_reviews_on_camera_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.integer "age"
@@ -83,4 +94,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_08_144756) do
   add_foreign_key "bookings", "cameras"
   add_foreign_key "bookings", "users"
   add_foreign_key "cameras", "users"
+  add_foreign_key "reviews", "cameras"
+  add_foreign_key "reviews", "users"
 end

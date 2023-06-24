@@ -1,0 +1,13 @@
+
+<div class="reviews">
+  <h2>Reviews</h2>
+  <div class="reviews-box">
+    <% @reviews.each do |review| %>
+      <div class="review">
+        <h3><%= review.user.name %></h3>
+        <p>Rating: <%= review.rating %></p>
+        <p><%= review.comment %></p>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -14,11 +14,12 @@ class CamerasController < ApplicationController
 
     # GET /cameras/:id
     def show
-      @camera = Camera.find(params[:id])
+      @camera = Camera.includes(:reviews).find(params[:id])
       @bookings = @camera.bookings
       if user_signed_in?
         @my_cameras = current_user.cameras
       end
+      @reviews = @camera.reviews
     end
 
     # GET /cameras/new
