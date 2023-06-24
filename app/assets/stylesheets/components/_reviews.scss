@@ -1,14 +1,43 @@
+@mixin phone {
+    @media (max-width: 582px) {
+      @content; // This will include the styles inside the mixin block when the condition is met
+    }
+  }
+  
+@mixin small {
+@media (max-width: 908px) {
+.reviews-box {
+    flex-direction: column;
+    .review {
+        flex: 0 1 calc(100% - 80px) !important;
+        width: 100% !important;
+    }
+    }
+}
+}
+
 .reviews {
+    @include small;
     padding-top: 24px;
     border-top: solid 1px var(--lg);
     .reviews-box {
         display: flex;
         flex-wrap: wrap;
-        gap: 32px;
+        row-gap: 40px;
+        column-gap: 160px;
         margin: 24px 0;
         width: 100%;
         .review {
-            flex: 0 1 calc(50% - 16px) !important;
+            flex: 0 1 calc(50% - 80px) !important;
+            width: 340px;
+            .info {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 16px;
+                p {
+                    color: var(--a2);
+                }
+            }
         }
     }
 }

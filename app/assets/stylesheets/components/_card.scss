@@ -1,13 +1,10 @@
 @mixin phone {
   @media (max-width: 582px) {
-    @content; // This will include the styles inside the mixin block when the condition is met
-  }
-}
-
-@mixin medium {
-  @media (max-width: 1182px) {
-    .card-link {
-      flex: 0 1 calc(33% - 8px) !important;
+    @content;
+    .card {
+      &.show-card {
+        width: 100%;
+      }
     }
   }
 }
@@ -16,6 +13,14 @@
   @media (max-width: 908px) {
     .card-link {
       flex: 0 1 calc(50% - 8px) !important;
+    }
+  }
+}
+
+@mixin medium {
+  @media (max-width: 1334px) {
+    .card-link {
+      flex: 0 1 calc(33% - 8px) !important;
     }
   }
 }

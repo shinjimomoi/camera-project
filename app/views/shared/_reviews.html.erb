@@ -4,9 +4,13 @@
   <div class="reviews-box">
     <% @reviews.each do |review| %>
       <div class="review">
-        <h3><%= review.user.name %></h3>
-        <p>Rating: <%= review.rating %></p>
-        <p><%= review.comment %></p>
+        <div class="info">
+          <h3><%= review.user.name %></h3>
+          <p><%= render_stars(review.rating) %></p>
+        </div>
+        <div class="comment">
+          <p><%= review.comment %></p>
+        </div>
       </div>
     <% end %>
   </div>
