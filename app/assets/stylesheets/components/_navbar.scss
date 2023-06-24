@@ -1,9 +1,18 @@
 nav, footer {
 	display: flex;
   background-color: rgb(255, 255, 255);
-  box-shadow: 0 0 4px rgba($color: #000000, $alpha: 0.1);
-	justify-content: end;
+  border: solid 1px var(--lg);
+	justify-content: space-between;
   padding: 16px 0;
+  div.logo {
+    margin-left: 24px;
+    height: 1%;
+      width: 1%;
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
 	ul {
     margin: 0;
 		display: flex;

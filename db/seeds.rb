@@ -42,9 +42,9 @@ cameras = [
   { brand: 'Hasselblad', model: 'X1D II 50C', year: 2019, price: 10000, condition: 'New' }
 ]
 
-# users.each do |user_attributes|
-#   User.create(user_attributes)
-# end
+users.each do |user_attributes|
+  User.create(user_attributes)
+end
 
 # Fetch all existing users
 users = User.all
