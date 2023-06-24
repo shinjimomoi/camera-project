@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 	resources :bookings
 
 	resources :cameras, except: :index do
+    resources :reviews, only: [:create]
 		# Define additional camera routes if needed
 	end
 

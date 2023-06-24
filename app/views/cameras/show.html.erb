@@ -22,6 +22,19 @@
     <% end %>
   <% end %>
   <% if user_signed_in? && @camera.user != current_user %>
+    <div class="review-form">
+      <%= form_with(model: [@camera, @review], url: camera_reviews_path(@camera)) do |form| %>
+        <%= form.hidden_field :camera_id, value: @camera.id %>
+
+        <%= form.label :rating, "Rating:" %>
+        <%= form.number_field :rating, in: 1..5 %>
+
+        <%= form.label :comment, "Comment:" %>
+        <%= form.text_area :comment %>
+
+        <%= form.submit "Submit" %>
+      <% end %>
+    </div>
     <%= link_to "Book this camera", new_booking_path(camera_id: @camera.id), class: "btn btn-primary" %>
   <% end %>
   <% if user_signed_in? %>

@@ -20,6 +20,7 @@ class CamerasController < ApplicationController
         @my_cameras = current_user.cameras
       end
       @reviews = @camera.reviews
+      @review = @camera.reviews.build # Instantiate a new Review object
     end
 
     # GET /cameras/new
