@@ -12,7 +12,7 @@
 @mixin small {
   @media (max-width: 908px) {
     .card-link {
-      flex: 0 1 calc(50% - 8px) !important;
+      flex: 1 1 calc(50% - 8px) !important;
     }
   }
 }
@@ -20,7 +20,7 @@
 @mixin medium {
   @media (max-width: 1334px) {
     .card-link {
-      flex: 0 1 calc(33% - 8px) !important;
+      flex: 1 1 calc(33% - 8px) !important;
     }
   }
 }
@@ -37,7 +37,7 @@
 	.card-link {
     display: inline-block;
 		text-decoration: none;
-    flex: 0 1 calc(25% - 12px);
+    flex: 1 1 calc(25% - 12px);
     color: #111;
 		&:visited {
 			color: #111;
