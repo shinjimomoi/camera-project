@@ -1,7 +1,9 @@
 class Camera < ApplicationRecord
 	belongs_to :user
 	has_many :bookings
-  has_many_attached :photo
+ 	has_many_attached :photo
+	has_many :reviews
+
 
 	validates :model, presence: true
 	validates :model, length: { maximum: 100 }

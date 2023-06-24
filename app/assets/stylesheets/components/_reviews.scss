@@ -1,0 +1,14 @@
+.reviews {
+    padding-top: 24px;
+    border-top: solid 1px var(--lg);
+    .reviews-box {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 32px;
+        margin: 24px 0;
+        width: 100%;
+        .review {
+            flex: 0 1 calc(50% - 16px) !important;
+        }
+    }
+}

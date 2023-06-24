@@ -42,18 +42,71 @@ cameras = [
   { brand: 'Hasselblad', model: 'X1D II 50C', year: 2019, price: 10000, condition: 'New' }
 ]
 
-users.each do |user_attributes|
-  User.create(user_attributes)
-end
+bookings = [
+  { start_date: Date.today, end_date: Date.today + 7 },
+  { start_date: Date.today + 10, end_date: Date.today + 15 },
+  { start_date: Date.today + 20, end_date: Date.today + 25 },
+  { start_date: Date.today + 5, end_date: Date.today + 12 },
+  { start_date: Date.today + 14, end_date: Date.today + 21 },
+  { start_date: Date.today + 30, end_date: Date.today + 37 },
+  { start_date: Date.today + 8, end_date: Date.today + 14 },
+  { start_date: Date.today + 22, end_date: Date.today + 29 },
+  { start_date: Date.today + 3, end_date: Date.today + 10 },
+  { start_date: Date.today + 18, end_date: Date.today + 25 },
+  { start_date: Date.today + 35, end_date: Date.today + 42 },
+  { start_date: Date.today + 16, end_date: Date.today + 23 },
+  { start_date: Date.today + 28, end_date: Date.today + 35 },
+  # Add more booking data as needed
+]
 
-# Fetch all existing users
+reviews = [
+  { rating: 4, comment: 'Great camera for beginners!' },
+  { rating: 5, comment: 'Excellent image quality and features.' },
+  { rating: 3, comment: 'Decent camera, but could be better.' },
+  { rating: 4, comment: 'Impressive performance and durability.' },
+  { rating: 5, comment: 'Highly recommended for professional use.' },
+  { rating: 2, comment: 'Disappointing image quality.' },
+]
+
+# users.each do |user_attributes|
+#   User.create(user_attributes)
+# end
+
+# # Fetch all existing users
+# users = User.all
+
+# # Iterate over the users and create cameras
+# users.each do |user|
+#   # Randomly select a camera for the user
+#   camera = cameras.sample
+
+#   # Create a camera for the user
+#   user.cameras.create(camera)
+# end
+
 users = User.all
+cameras = Camera.all
 
-# Iterate over the users and create cameras
 users.each do |user|
-  # Randomly select a camera for the user
-  camera = cameras.sample
-
-  # Create a camera for the user
-  user.cameras.create(camera)
+  cameras.each do |camera|
+    booking = bookings.sample
+    user.bookings.create(camera: camera, start_date: booking[:start_date], end_date: booking[:end_date])
+  end
 end
+
+# cameras.each do |camera|
+#   # Shuffle the reviews array to get random reviews for each camera
+#   random_reviews = reviews.shuffle
+
+#   # Take the first three reviews from the shuffled array
+#   selected_reviews = random_reviews.take(3)
+
+#   # Create the selected reviews for the camera
+#   selected_reviews.each do |review_attributes|
+#     # Randomly select a user for the review
+#     user = User.all.sample
+
+#     # Create the review for the camera with the associated user
+#     camera.reviews.create(review_attributes.merge(user: user))
+#   end
+# end
