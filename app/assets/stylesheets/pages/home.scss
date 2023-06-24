@@ -7,30 +7,47 @@ a {
 }
 .filters {
   position: relative;
-  p {
+  display: flex;
+  .filter-box{
     cursor: pointer;
-    border: solid 1px var(--gr);
     border-radius: var(--br2);
     background-color: var(--w);
-    padding: 8px 12px;
-    &:not(:last-of-type){
-      margin-right: 16px;
-    }
-  }
-  display: flex;
-  .hidden {
-    display: none;
-  }
-  .condition, .price {
+
     position: absolute;
-    top: 16px;
+    display: flex;
+    flex-direction: column;
+    top: 40px;
     left: 0;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.08);
     z-index: 10;
     a {
       color: var(--gr);
       font-weight: bold;
+      display: inline-block;
+      padding: 16px;
+      font-size: 14px;
+      transition: .2s ease-in-out;
+      &:first-child {
+        border-radius: var(--br2) var(--br2) 0 0;
+      }
+      &:last-child {
+        border-radius: 0 0 var(--br2) var(--br2);
+      }
+      &:not(:last-of-type) {
+        border-bottom: solid 1px var(--lg1);
+      }
+      &:hover {
+        background-color: var(--gr);
+        color: var(--w);
+      }
     }
+    &.hidden {
+      display: none;
+    }
+
   }
+
+
 }
 
 footer {

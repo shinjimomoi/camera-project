@@ -1,15 +1,17 @@
-.btn {
+a.btn, input.btn {
   font-size: 14px;
-  &:not(:last-of-type) {
-    margin-right: 8px;
-  }
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: var(--br2);
+  margin-right: 8px;
   &.btn-primary {
     border: none;
     background-color: var(--gr);
-    border-radius: var(--br2);
     color: var(--w);
-    padding: 8px 12px;
-    cursor: pointer;
+  }
+  &.btn-secondary {
+    border: solid 1px var(--gr);
+    color: var(--gr);
   }
   &.btn-delete {
     background-color: var(--a2);
