@@ -94,19 +94,19 @@ users.each do |user|
   end
 end
 
-# cameras.each do |camera|
-#   # Shuffle the reviews array to get random reviews for each camera
-#   random_reviews = reviews.shuffle
+cameras.each do |camera|
+  # Shuffle the reviews array to get random reviews for each camera
+  random_reviews = reviews.shuffle
 
-#   # Take the first three reviews from the shuffled array
-#   selected_reviews = random_reviews.take(3)
+  # Take the first three reviews from the shuffled array
+  selected_reviews = random_reviews.take(3)
 
-#   # Create the selected reviews for the camera
-#   selected_reviews.each do |review_attributes|
-#     # Randomly select a user for the review
-#     user = User.all.sample
+  # Create the selected reviews for the camera
+  selected_reviews.each do |review_attributes|
+    # Randomly select a user for the review
+    user = User.all.sample
 
-#     # Create the review for the camera with the associated user
-#     camera.reviews.create(review_attributes.merge(user: user))
-#   end
-# end
+    # Create the review for the camera with the associated user
+    camera.reviews.create(review_attributes.merge(user: user))
+  end
+end
