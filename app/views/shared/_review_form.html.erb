@@ -1,0 +1,18 @@
+<div class="review-form">
+    <%= form_with(model: [@camera, @review], url: camera_reviews_path(@camera)) do |form| %>
+        <%= form.hidden_field :camera_id, value: @camera.id %>
+        <%= form.label :rating, "Rating:" %>
+        <div class="rating-stars">
+        <% (1..5).each do |rating_value| %>
+            <label class="star-label" for="rating-<%= rating_value %>">
+            <%= form.radio_button :rating, rating_value, id: "rating-#{rating_value}", class: 'visually-hidden' %>
+            <i class="fas fa-star"></i>
+            </label>
+        <% end %>
+        </div>
+        <%# <%= form.number_field :rating, in: 1..5 %> 
+        <%= form.label :comment, "Comment:" %>
+        <%= form.text_area :comment %>
+        <%= form.submit "Submit" %>
+    <% end %>
+</div>

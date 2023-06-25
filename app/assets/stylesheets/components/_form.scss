@@ -8,6 +8,17 @@ input {
       outline: solid 1px var(--a1);
     }
   }
+  &[type=submit] {
+    color: var(--w);
+    background-color: var(--gr);
+    border-radius: var(--br2);
+    border: solid 1px var(--gr);
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  &::placeholder {
+    color: var(--lg);
+  }
 }
 .login, .signup {
   width: 240px;
@@ -25,17 +36,7 @@ input {
           outline: solid 1px var(--a1);
         }
       }
-      &[type=submit] {
-        color: var(--w);
-        background-color: var(--gr);
-        border-radius: var(--br2);
-        border: solid 1px var(--gr);
-        padding: 8px 12px;
-        cursor: pointer;
-      }
-      &::placeholder {
-        color: var(--lg);
-      }
+      
     }
     .photofield {
       input {

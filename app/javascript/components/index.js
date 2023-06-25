@@ -25,4 +25,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       }
   });
+  var starLabels = document.querySelectorAll('.star-label');
+  console.log(starLabels, "star Labels")
+  
+  starLabels.forEach(function(label) {
+    label.addEventListener('click', function() {
+      var radio = this.querySelector('input[type="radio"]');
+      console.log(label, "label")
+      radio.checked = true;
+      console.log(radio.checked, "radio")
+    });
+  });
 });
