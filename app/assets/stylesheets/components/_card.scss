@@ -12,32 +12,38 @@
 @mixin small {
   @media (max-width: 908px) {
     .card-link {
-      flex: 1 1 calc(50% - 8px) !important;
+      flex: 0 1 calc(50% - 8px) !important;
+    }
+    .card {
+      &.show-card {
+        min-width: 25%;
+      }
     }
   }
 }
 
-@mixin medium {
-  @media (max-width: 1334px) {
-    .card-link {
-      flex: 1 1 calc(33% - 8px) !important;
-    }
-  }
-}
+// @mixin medium {
+//   @media (max-width: 1444px) {
+//     .card-link {
+//       flex: 0 1 calc(33% - 8px) !important;
+//     }
+//   }
+// }
 
 .camera-list {
-  @include medium;
-  @include small;
+  // @include medium;
+  // @include small;
 	display: flex;
 	flex-wrap: wrap;
   flex-grow: 1;
-  margin-right: auto;
+  // margin-right: auto;
+  justify-content: space-between;
   gap: 16px; // Add a 16px gap between the cards
 
 	.card-link {
     display: inline-block;
 		text-decoration: none;
-    flex: 1 1 calc(25% - 12px);
+    flex: 0 1 calc(15% - 12px);
     color: #111;
 		&:visited {
 			color: #111;
@@ -48,9 +54,6 @@
 
 
 .card {
-  @include phone {
-    width: 88vw; // The width will change to 100px when viewport is less than 500px
-  }
   vertical-align: top;
   display: flex;
   flex-direction: column;
@@ -64,8 +67,10 @@
   &.index-card {
   }
   &.show-card {
-    width: 30%;
-    // flex-direction: row;
+    width: 240px;
+    @media screen and (max-width: 908px) {
+      width: 100%;
+    }
   }
   .img-container {
     position: relative;
