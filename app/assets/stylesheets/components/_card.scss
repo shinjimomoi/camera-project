@@ -4,6 +4,7 @@
     .card {
       &.show-card {
         width: 100%;
+
       }
     }
   }
@@ -43,7 +44,7 @@
 	.card-link {
     display: inline-block;
 		text-decoration: none;
-    flex: 0 1 calc(15% - 12px);
+    flex: 1 1 calc(15% - 12px);
     color: #111;
 		&:visited {
 			color: #111;
@@ -68,8 +69,14 @@
   }
   &.show-card {
     width: 240px;
-    @media screen and (max-width: 908px) {
+    @media screen and (max-width: 582px) {
       width: 100%;
+      .img-container {
+          height: auto;
+          img {
+            width: 100%;
+          }
+        }
     }
   }
   .img-container {

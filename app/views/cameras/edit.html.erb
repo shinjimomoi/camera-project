@@ -1,51 +1,54 @@
-<h1>Edit Camera</h1>
+<div class="container">
+  <h1>Edit Camera</h1>
 
-<%= form_with(model: @camera, url: camera_path(@camera), method: :patch, local: true) do |form| %>
-  <% if @camera.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@camera.errors.count, "error") %> prohibited this camera from being saved:</h2>
-      <ul>
-        <% @camera.errors.full_messages.each do |message| %>
-          <li><%= @message %></li>
-        <% end %>
-      </ul>
+  <%= form_with(model: @camera, url: camera_path(@camera), method: :patch, local: true) do |form| %>
+    <% if @camera.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@camera.errors.count, "error") %> prohibited this camera from being saved:</h2>
+        <ul>
+          <% @camera.errors.full_messages.each do |message| %>
+            <li><%= @message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.label :brand %>
+      <%= form.text_field :brand %>
+    </div>
+
+    <div class="field">
+      <%= form.label :model %>
+      <%= form.text_field :model %>
+    </div>
+
+    <div class="field">
+      <%= form.label :year %>
+      <%= form.number_field :year %>
+    </div>
+
+    <div class="field">
+      <%= form.label :price %>
+      <%= form.number_field :price %>
+    </div>
+
+    <div class="field">
+      <%= form.label :condition %>
+      <%= form.text_field :condition %>
+    </div>
+
+    <div class="photofield">
+      <%= form.label :photo, "Upload a photo" %>
+      <%= form.file_field :photo %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit 'Update Camera' %>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :brand %>
-    <%= form.text_field :brand %>
-  </div>
 
-  <div class="field">
-    <%= form.label :model %>
-    <%= form.text_field :model %>
-  </div>
+  <%= link_to 'Back', camera_path(@camera) %>
 
-  <div class="field">
-    <%= form.label :year %>
-    <%= form.number_field :year %>
-  </div>
-
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.number_field :price %>
-  </div>
-
-  <div class="field">
-    <%= form.label :condition %>
-    <%= form.text_field :condition %>
-  </div>
-
-  <div class="photofield">
-    <%= form.label :photo, "Upload a photo" %>
-    <%= form.file_field :photo %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit 'Update Camera' %>
-  </div>
-<% end %>
-
-
-<%= link_to 'Back', camera_path(@camera) %>
+<div class="container">

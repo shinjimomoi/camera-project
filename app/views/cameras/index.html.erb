@@ -1,14 +1,16 @@
-<h1>My Cameras</h1>
+<div class="index container">
+  <h1>My Cameras</h1>
 
-<% if user_signed_in? %>
-  <div class="camera-list">
-    <% @my_cameras.each do |camera| %>
-      <%= link_to camera_path(camera), class: "card-link" do %>
-        <%= render 'shared/card', camera: camera, card_style: 'index-card' %>
+  <% if user_signed_in? %>
+    <div class="camera-list">
+      <% @my_cameras.each do |camera| %>
+        <%= link_to camera_path(camera), class: "card-link" do %>
+          <%= render 'shared/card', camera: camera, card_style: 'index-card' %>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
-<% end %>
+    </div>
+  <% end %>
 
-<%= link_to "Add Camera", new_camera_path, class:"btn btn-primary" %>
-<%= link_to "All Cameras", root_path, class:"btn btn-primary" %>
+  <%= link_to "Add Camera", new_camera_path, class:"btn btn-primary" %>
+  <%= link_to "All Cameras", root_path, class:"btn btn-primary" %>
+</div>
