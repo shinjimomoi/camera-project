@@ -4,7 +4,9 @@ a.btn, input.btn {
   padding: 8px 12px;
   border: none;
   border-radius: var(--br2);
-  margin-right: 8px;
+  &:not(:last-of-type) {
+    margin-right: 8px;
+  }
   &.btn-primary {
     background-color: var(--gr);
     color: var(--w);

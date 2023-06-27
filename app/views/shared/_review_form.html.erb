@@ -10,9 +10,9 @@
             </label>
         <% end %>
         </div>
-        <%# <%= form.number_field :rating, in: 1..5 %> 
+        <%# <%= form.number_field :rating, in: 1..5 %>
         <%= form.label :comment, "Comment:" %>
         <%= form.text_area :comment %>
-        <%= form.submit "Submit" %>
+        <%= form.submit "Submit", class:"btn" %>
     <% end %>
 </div>

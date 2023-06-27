@@ -1,43 +1,44 @@
 .review-form {
     form {
+      width: 40%;
       display: flex;
       flex-direction: column;
-      
+      input.btn {
+          margin: 16px 0;
+        }
       .rating-stars {
         display: inline-block;
         font-size: 24px;
-        
+
         label {
           cursor: pointer;
-          
+
           i {
             color: #888;
           }
-          
+
           input[type="radio"].visually-hidden {
             position: absolute;
             clip: rect(0, 0, 0, 0);
             pointer-events: none;
           }
-          
+
           input[type="radio"]:checked ~ i,
             input[type="radio"]:checked ~ i ~ i {
             color: var(--a2);
             }
         }
       }
-      
+
+
       textarea {
-        width: 40%;
+        width: 100%;
         height: 140px;
         border-radius: var(--br2);
         border: solid 1px var(--lg);
-        padding: 8px 12px;
-        
         &:focus {
           outline: solid 1px var(--a1);
         }
       }
     }
   }
-  
