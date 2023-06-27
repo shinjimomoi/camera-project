@@ -14,7 +14,8 @@
   </div>
       <%= render partial: 'shared/reviews', locals: { reviews: @reviews } %>
       <% if user_signed_in? && @camera.user != current_user %>
-        <%= render partial: 'shared/review_form', locals: { reviews: @reviews } %>      
+        <%= render partial: 'shared/review_form', locals: { reviews: @reviews } %>
+        <%= render partial: 'shared/booking_form', locals: { camera: @camera } %>
       <% end %>
   <div class="controls">
     <% if user_signed_in? && @camera.user == current_user %>

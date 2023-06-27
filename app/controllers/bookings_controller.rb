@@ -19,11 +19,12 @@ class BookingsController < ApplicationController
     def create
       @booking = current_user.bookings.new(booking_params)
       if @booking.save
+        puts "booking confirmed====="
         puts @booking.errors.full_messages
-        redirect_to @booking, notice: 'Booking was successfully created.'
+        redirect_to camera_path(@booking.camera), notice: 'Booking was successfully created.'
       else
         puts @booking.errors.full_messages
-        render :new
+        redirect_back fallback_location: root_path, alert: 'There was an error creating the booking.'
       end
     end
 

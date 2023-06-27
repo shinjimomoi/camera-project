@@ -16,11 +16,13 @@ class CamerasController < ApplicationController
     def show
       @camera = Camera.includes(:reviews).find(params[:id])
       @bookings = @camera.bookings
+      @reviews = @camera.reviews
+      @review = @camera.reviews.build
+
       if user_signed_in?
         @my_cameras = current_user.cameras
+        @booking = current_user.bookings.new(camera: @camera)
       end
-      @reviews = @camera.reviews
-      @review = @camera.reviews.build # Instantiate a new Review object
     end
 
     # GET /cameras/new
