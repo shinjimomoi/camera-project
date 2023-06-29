@@ -1,5 +1,5 @@
 <div class="booking-form">
-  <h1>New Booking</h1>
+  <h1>Book this camera</h1>
   <%= form_with(model: @booking) do |form| %>
     <%= form.hidden_field :camera_id %>
   <div class="field">
@@ -10,7 +10,7 @@
     <%= form.label :end_date, "End Date" %>
     <%= form.text_field :end_date, id: "end_date_picker" %>
   </div>
-    <%= form.submit "Submit" %>
+    <%= form.submit "Book", class:"btn"%>
   <% end %>
   <% if @booking.errors.any? %>
     <div class="alert alert-danger">

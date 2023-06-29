@@ -1,5 +1,6 @@
 <div class="show container">
-  <h1>Camera Details</h1>
+  <h3><%= @camera.brand %></h3>
+  <h1> <%= @camera.model %></h1>
     <%= render partial: 'shared/card', locals: { camera: @camera, card_style: 'show-card' } %>
   <div class="bookings">
   <% if @bookings.present? && @camera.user == current_user %>
@@ -13,11 +14,9 @@
         </li>
       <% end %>
     </ul>
-  <% else %>
+  <% elsif !@bookings.present? && @camera.user == current_user%>
       <h3>No bookings</h3>
   <% end %>
-</div>
-<div class="reviews">
 </div>
   <%= render partial: 'shared/reviews', locals: { reviews: @reviews } %>
 <div class="review-booking">
