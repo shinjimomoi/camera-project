@@ -18,8 +18,8 @@
 
 .reviews {
     @include small;
-    padding-top: 24px;
-    border-top: solid 1px var(--lg);
+
+    flex: 2;
     .reviews-box {
         display: flex;
         flex-direction: column;
@@ -30,7 +30,6 @@
         width: 100%;
         .review {
             flex: 0 1 calc(50% - 80px) !important;
-            width: 340px;
             .info {
                 display: flex;
                 justify-content: space-between;

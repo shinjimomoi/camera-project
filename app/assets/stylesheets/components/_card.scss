@@ -36,7 +36,6 @@
   // @include small;
 	display: flex;
 	flex-wrap: wrap;
-  flex-grow: 1;
   // margin-right: auto;
   justify-content: space-between;
   gap: 16px; // Add a 16px gap between the cards
@@ -85,7 +84,8 @@
     object-fit: cover;
     object-position: center;
     padding: 24px;
-    height: 200px;
+    width: 200px;
+    height: auto;
     margin-bottom: 16px;
     img {
       display: block;

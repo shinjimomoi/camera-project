@@ -18,11 +18,15 @@
       <h3>No bookings</h3>
   <% end %>
 </div>
-  <%= render partial: 'shared/reviews', locals: { reviews: @reviews } %>
 <div class="review-booking">
   <% if user_signed_in? && @camera.user != current_user %>
+  <div class="reviews">
+    <%= render partial: 'shared/reviews', locals: { reviews: @reviews } %>
     <%= render partial: 'shared/review_form', locals: { reviews: @reviews } %>
+  </div>
+  <div class="bookings">
     <%= render partial: 'shared/booking_form', locals: { camera: @camera } %>
+  </div>
   <% end %>
 </div>
 <div class="controls">
