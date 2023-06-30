@@ -2,32 +2,40 @@
   <h3><%= @camera.brand %></h3>
   <h1> <%= @camera.model %></h1>
     <%= render partial: 'shared/card', locals: { camera: @camera, card_style: 'show-card' } %>
-  <div class="bookings">
   <% if @bookings.present? && @camera.user == current_user %>
-  <h3>Bookings for this camera</h3>
-    <ul>
-      <% @bookings.order(start_date: :asc).each do |booking| %>
-        <li>
-          <%= link_to booking_path(booking) do %>
-            <strong>Booked from <%= booking.start_date %> to <%= booking.end_date %> by <%= booking.user.name %></strong>
+    <div class="bookings">
+      <h3>Bookings for this camera</h3>
+        <ul>
+          <% @bookings.order(start_date: :asc).each do |booking| %>
+            <li>
+            <%= link_to booking_path(booking) do %>
+              <strong>Booked from <%= booking.start_date %> to <%= booking.end_date %> by <%= booking.user.name %></strong>
+            <% end %>
+            </li>
           <% end %>
-        </li>
-      <% end %>
-    </ul>
+        </ul>
   <% elsif !@bookings.present? && @camera.user == current_user%>
       <h3>No bookings</h3>
+    </div>
   <% end %>
-</div>
 <div class="review-booking">
-  <% if user_signed_in? && @camera.user != current_user %>
   <div class="reviews">
     <%= render partial: 'shared/reviews', locals: { reviews: @reviews } %>
-    <%= render partial: 'shared/review_form', locals: { reviews: @reviews } %>
+    <% if user_signed_in? && @camera.user != current_user %>
+      <%= render partial: 'shared/review_form', locals: { reviews: @reviews } %>
+    <% end %>
   </div>
-  <div class="bookings">
-    <%= render partial: 'shared/booking_form', locals: { camera: @camera } %>
+    <% if user_signed_in? && @camera.user != current_user %>
+      <%= render partial: 'shared/booking_form', locals: { camera: @camera } %>
+    <% else %>
+      <div class="login-signup">
+        <%= link_to 'Signup', new_user_registration_path, class: "btn btn-primary" %>
+        <p>or</p>
+        <%= link_to 'Login', new_user_session_path, class: "btn btn-primary" %>
+        <p>to book this camera.</p>
+      </div>
+    <% end %>
   </div>
-  <% end %>
 </div>
 <div class="controls">
   <% if user_signed_in? && @camera.user == current_user %>
@@ -36,13 +44,6 @@
       <%= form.submit 'Delete', class:"btn btn-delete" %>
     <% end %>
   <% end %>
-  <% if user_signed_in? %>
-    <%= link_to 'My Cameras', cameras_path, class: "btn btn-primary" %>
-  <% else %>
-    <%= link_to 'Signup', new_user_registration_path, class: "btn btn-primary" %>
-    <p>or</p>
-    <%= link_to 'Login', new_user_session_path, class: "btn btn-primary" %>
-    <p>to book this camera.</p>
-  <% end %>
+
 </div>
 </div>
