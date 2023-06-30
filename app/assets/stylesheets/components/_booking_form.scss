@@ -1,6 +1,7 @@
 .booking-form {
   flex: 1;
   display: flex;
+  height: 240px;
   flex-direction: column;
   position: sticky;
   top: 48px;
@@ -15,4 +16,10 @@
         width: fit-content;
       }
   }
+}
+
+.login-signup {
+  height: 240px;
+  position: sticky;
+  top: 48px;
 }
