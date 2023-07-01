@@ -27,13 +27,27 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   var starLabels = document.querySelectorAll('.star-label');
   console.log(starLabels, "star Labels")
-  
-  starLabels.forEach(function(label) {
-    label.addEventListener('click', function() {
-      var radio = this.querySelector('input[type="radio"]');
-      console.log(label, "label")
-      radio.checked = true;
-      console.log(radio.checked, "radio")
+
+  // starLabels.forEach(function(label) {
+  //   label.addEventListener('click', function() {
+  //     var radio = this.querySelector('input[type="radio"]');
+  //     console.log(label, "label")
+  //     radio.checked = true;
+  //     console.log(radio.checked, "radio")
+  //   });
+  // });
+
+  starLabels.forEach(function(starLabel, index) {
+    starLabel.addEventListener('click', function() {
+      var clickedIndex = Array.from(starLabels).indexOf(this);
+
+      for (var i = 0; i < starLabels.length; i++) {
+        if (i <= clickedIndex) {
+          starLabels[i].querySelector('i').classList.add('selected');
+        } else {
+          starLabels[i].querySelector('i').classList.remove('selected');
+        }
+      }
     });
   });
 });

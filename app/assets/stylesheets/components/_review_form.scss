@@ -16,6 +16,10 @@
 
           i {
             color: #888;
+            &.selected {
+              color: var(--a2);
+
+            }
           }
 
           input[type="radio"].visually-hidden {
@@ -24,10 +28,10 @@
             pointer-events: none;
           }
 
-          input[type="radio"]:checked ~ i,
-            input[type="radio"]:checked ~ i ~ i {
-            color: var(--a2);
-            }
+          // input[type="radio"]:checked ~ i,
+          //   input[type="radio"]:checked ~ i ~ i {
+          //   color: var(--a2);
+          //   }
         }
       }
 
