@@ -44,9 +44,9 @@
     display: inline-block;
 		text-decoration: none;
     flex: 1 1 calc(15% - 12px);
-    color: #111;
+    color: var(--d1);
 		&:visited {
-			color: #111;
+			color: var(--d2);
 		}
 
   }

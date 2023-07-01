@@ -10,7 +10,7 @@
     <%= form.label :end_date, "End Date" %>
     <%= form.text_field :end_date, id: "end_date_picker" %>
   </div>
-    <%= form.submit "Book", class:"btn"%>
+    <%= form.submit "Book", class:"btn btn-secondary"%>
   <% end %>
   <% if @booking.errors.any? %>
     <div class="alert alert-danger">

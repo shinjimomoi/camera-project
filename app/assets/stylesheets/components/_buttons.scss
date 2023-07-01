@@ -4,16 +4,16 @@ a.btn, input.btn {
   padding: 8px 12px;
   border: none;
   border-radius: var(--br2);
+  color: var(--w);
   &:not(:last-of-type) {
     margin-right: 8px;
   }
   &.btn-primary {
-    background-color: var(--gr);
-    color: var(--w);
+    background-color: var(--a1);
   }
   &.btn-secondary {
-    color: var(--gr);
-    border: solid 1px var(--lg);
+    background-color: var(--a2);
+
   }
   &.btn-delete {
     background-color: var(--a2);
