@@ -51,9 +51,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  var datepicker = document.getElementById('booking_date_field');
-  datepicker.addEventListener('focus', function() {
-    console.log(this, "this~~~")
+  var startDatePicker = document.getElementById('start_date');
+  var endDatePicker = document.getElementById('end_date');
+
+  startDatePicker.addEventListener('focus', function() {
+    this.setAttribute('type', 'date');
+  });
+
+  endDatePicker.addEventListener('focus', function() {
     this.setAttribute('type', 'date');
   });
 });
