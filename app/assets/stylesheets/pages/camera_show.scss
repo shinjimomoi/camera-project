@@ -7,5 +7,12 @@
 @media (max-width: 582px) {
     .review-booking {
       flex-direction: column;
+      .booking-form {
+        position: sticky;
+        bottom: 0;
+      }
+    }
+    footer {
+      display: none;
     }
   }

@@ -3,12 +3,11 @@
   <%= form_with(model: @booking) do |form| %>
     <%= form.hidden_field :camera_id %>
   <div class="field">
-    <%= form.label :start_date, "Start Date" %>
-    <%= form.text_field :start_date, id: "start_date_picker" %>
+    <%= form.date_field :date_field, placeholder: 'From', class: 'datepicker' %>
+
   </div>
   <div class="field">
-    <%= form.label :end_date, "End Date" %>
-    <%= form.text_field :end_date, id: "end_date_picker" %>
+    <%= form.date_field :date_field, placeholder: 'To',class: 'datepicker' %>
   </div>
     <%= form.submit "Book", class:"btn btn-secondary"%>
   <% end %>

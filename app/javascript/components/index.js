@@ -50,4 +50,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  var datepicker = document.getElementById('booking_date_field');
+  datepicker.addEventListener('focus', function() {
+    console.log(this, "this~~~")
+    this.setAttribute('type', 'date');
+  });
 });
