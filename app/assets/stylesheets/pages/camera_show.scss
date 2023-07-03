@@ -3,3 +3,9 @@
   justify-content: start;
   gap: 100px;
 }
+
+@media (max-width: 582px) {
+    .review-booking {
+      flex-direction: column;
+    }
+  }

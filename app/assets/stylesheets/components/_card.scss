@@ -48,7 +48,6 @@
 		&:visited {
 			color: var(--d2);
 		}
-
   }
 }
 
@@ -84,8 +83,7 @@
     object-fit: cover;
     object-position: center;
     padding: 24px;
-    width: 200px;
-    height: auto;
+    flex: 1;
     margin-bottom: 16px;
     img {
       display: block;

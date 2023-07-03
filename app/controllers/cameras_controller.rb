@@ -32,13 +32,15 @@ class CamerasController < ApplicationController
 
     # POST /cameras
     def create
+      Rails.logger.debug
       @camera = current_user.cameras.build(camera_params)
       @camera.photo.attach(params[:camera][:photo])
+
       if @camera.save
         redirect_to @camera, notice: 'Camera was successfully created.'
       else
         flash.now[:alert] = 'There was an error creating the camera.'
-        render :new, alert: 'There was an error.'
+        render :new
       end
     end
 

@@ -1,23 +1,7 @@
 <div class="show container">
   <h3><%= @camera.brand %></h3>
   <h1> <%= @camera.model %></h1>
-    <%= render partial: 'shared/card', locals: { camera: @camera, card_style: 'show-card' } %>
-  <% if @bookings.present? && @camera.user == current_user %>
-    <div class="bookings">
-      <h3>Bookings for this camera</h3>
-        <ul>
-          <% @bookings.order(start_date: :asc).each do |booking| %>
-            <li>
-            <%= link_to booking_path(booking) do %>
-              <strong>Booked from <%= booking.start_date %> to <%= booking.end_date %> by <%= booking.user&.name %></strong>
-            <% end %>
-            </li>
-          <% end %>
-        </ul>
-  <% elsif !@bookings.present? && @camera.user == current_user%>
-      <h3>No bookings</h3>
-    </div>
-  <% end %>
+  <%= render partial: 'shared/card', locals: { camera: @camera, card_style: 'show-card' } %>
 <div class="review-booking">
   <div class="reviews">
     <%= render partial: 'shared/reviews', locals: { reviews: @reviews } %>
@@ -27,6 +11,23 @@
   </div>
     <% if user_signed_in? && @camera.user != current_user %>
       <%= render partial: 'shared/booking_form', locals: { camera: @camera } %>
+    <% elsif user_signed_in? && @camera.user == current_user %>
+      <% if @bookings.present? && @camera.user == current_user %>
+        <div class="bookings">
+          <h3>Bookings for this camera</h3>
+            <ul>
+              <% @bookings.order(start_date: :asc).each do |booking| %>
+                <li>
+                <%= link_to booking_path(booking) do %>
+                  <strong>Booked from <%= booking.start_date %> to <%= booking.end_date %> by <%= booking.user&.name %></strong>
+                <% end %>
+                </li>
+              <% end %>
+            </ul>
+      <% elsif !@bookings.present? && @camera.user == current_user%>
+          <h3>No bookings</h3>
+        </div>
+      <% end %>
     <% else %>
       <div class="login-signup">
         <%= link_to 'Signup', new_user_registration_path, class: "btn btn-primary" %>
@@ -39,7 +40,7 @@
 </div>
 <div class="controls">
   <% if user_signed_in? && @camera.user == current_user %>
-    <%= link_to 'Edit', edit_camera_path(@camera), class: "btn btn-primary" %>
+    <%= link_to 'Edit', edit_camera_path(@camera), class: "btn btn-secondary" %>
     <%= form_with(model: @camera, method: :delete, url: camera_path(@camera)) do |form| %>
       <%= form.submit 'Delete', class:"btn btn-delete" %>
     <% end %>

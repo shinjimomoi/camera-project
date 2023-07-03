@@ -18,7 +18,7 @@
   </div>
   <div>
     <%= form.label :condition %>
-    <%= form.text_field :condition %>
+    <%= form.collection_radio_buttons :condition, [["Used", "used"], ["New", "new"]], :second, :first %>
   </div>
   <div>
     <%= form.label :photo %>
