@@ -35,13 +35,13 @@
     form {
       align-items: center;
       justify-content: space-between;
-      background-color: var(--w);
+      background-color: var(--a1);
       flex-direction: row;
-      padding: 16px 0;
+      padding: 16px 16px;
       border-top: 1px solid var(--lg);
-      width: inherit;
+      width: 100%;
       .field {
-        width: 70%;
+        // width: 70%;
 
       }
     }
