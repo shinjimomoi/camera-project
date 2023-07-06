@@ -2,6 +2,9 @@ a {
   color: rgb(53, 53, 53);
   text-decoration: none;
   &:visited {
+    color: var(--a1);
+  }
+  &.btn:visited {
     color: var(--w);
   }
 }
