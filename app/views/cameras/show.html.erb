@@ -19,7 +19,7 @@
               <% @bookings.order(start_date: :asc).each do |booking| %>
                 <li>
                 <%= link_to booking_path(booking) do %>
-                  <strong>Booked from <%= booking.start_date %> to <%= booking.end_date %> by <%= booking.user&.name %></strong>
+                  <p class="booking"> <span> <%= booking.start_date %> </span> to <span> <%= booking.end_date %> </span> <br> by <%= booking.user&.name %></p>
                 <% end %>
                 </li>
               <% end %>
